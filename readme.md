@@ -19,6 +19,11 @@ modifyFilename('src/unicorn.png', function (filename, extension) {
 	return filename + '-rainbow' + extension;
 });
 //=> 'src/unicorn-rainbow.png'
+
+modifyFilename(['src/unicorn.png', 'src/pony.png'], function (filename, extension) {
+	return filename + '-rainbow' + extension;
+});
+//=> ['src/unicorn-rainbow.png', 'src/pony-rainbow.png']
 ```
 
 
