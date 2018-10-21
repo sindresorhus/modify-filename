@@ -11,4 +11,9 @@ test('main', t => {
 		modifyFilename(['src/unicorn.png', 'src/pony.png'], (filename, ext) => `${filename}-rainbow${ext}`)[1],
 		'src/pony-rainbow.png'
 	);
+
+	t.is(
+		modifyFilename('foo.min.js', (filename, ext) => `${filename}-rainbow${ext}`),
+		'foo.min-rainbow.js'
+	);
 });
