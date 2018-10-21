@@ -6,22 +6,22 @@
 ## Install
 
 ```
-$ npm install --save modify-filename
+$ npm install modify-filename
 ```
 
 
 ## Usage
 
 ```js
-var modifyFilename = require('modify-filename');
+const modifyFilename = require('modify-filename');
 
-modifyFilename('src/unicorn.png', function (filename, extension) {
-	return filename + '-rainbow' + extension;
+modifyFilename('src/unicorn.png', (filename, extension) => {
+	return `${filename}-rainbow${extension}`;
 });
 //=> 'src/unicorn-rainbow.png'
 
-modifyFilename(['src/unicorn.png', 'src/pony.png'], function (filename, extension) {
-	return filename + '-rainbow' + extension;
+modifyFilename(['src/unicorn.png', 'src/pony.png'], (filename, extension) => {
+	return `${filename}-rainbow${extension}`;
 });
 //=> ['src/unicorn-rainbow.png', 'src/pony-rainbow.png']
 ```
@@ -29,4 +29,4 @@ modifyFilename(['src/unicorn.png', 'src/pony.png'], function (filename, extensio
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
