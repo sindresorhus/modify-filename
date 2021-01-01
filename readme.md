@@ -1,4 +1,4 @@
-# modify-filename [![Build Status](https://travis-ci.org/sindresorhus/modify-filename.svg?branch=master)](https://travis-ci.org/sindresorhus/modify-filename)
+# modify-filename
 
 > Modify the filename in a path
 
