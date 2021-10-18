@@ -1,15 +1,14 @@
-'use strict';
-const path = require('path');
+import path from 'node:path';
 
-module.exports = function modifyFilename(pth, modifier) {
-	if (!pth || !modifier) {
+export default function modifyFilename(inputPath, modifier) {
+	if (!inputPath || !modifier) {
 		throw new Error('`path` and `modifier` required');
 	}
 
-	if (Array.isArray(pth)) {
-		return pth.map(el => modifyFilename(el, modifier));
+	if (Array.isArray(inputPath)) {
+		return inputPath.map(element => modifyFilename(element, modifier));
 	}
 
-	const ext = path.extname(pth);
-	return path.join(path.dirname(pth), modifier(path.basename(pth, ext), ext));
-};
+	const fileExtension = path.extname(inputPath);
+	return path.join(path.dirname(inputPath), modifier(path.basename(inputPath, fileExtension), fileExtension));
+}
